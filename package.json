@@ -1,0 +1,25 @@
+{
+  "name": "test-vuepress-nested-group",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node ../vuepress/bin/vuepress dev docs",
+    "build": "node ../vuepress/bin/vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zyy7259/test-vuepress-nested-group.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zyy7259/test-vuepress-nested-group/issues"
+  },
+  "homepage": "https://github.com/zyy7259/test-vuepress-nested-group#readme"
+}
