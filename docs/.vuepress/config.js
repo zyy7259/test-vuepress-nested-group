@@ -44,6 +44,10 @@ module.exports = {
             link: '/guide/',
           },
           {
+            text: 'Nested',
+            link: '/nested/',
+          },
+          {
             text: 'Config Reference',
             link: '/config/'
           },
@@ -57,7 +61,10 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/guide/': genSidebarConfig('Guide')
+          '/guide/': genSidebarConfig('Guide'),
+          '/nested/': genNestedSidebarConfig('Nested'),
+          '/nested1/': genNestedSidebarConfig('Nested'),
+          '/nested2/': genNestedSidebarConfig('Nested'),
         }
       },
       '/zh/': {
@@ -69,6 +76,10 @@ module.exports = {
           {
             text: '指南',
             link: '/zh/guide/',
+          },
+          {
+            text: '嵌套',
+            link: '/zh/nested/',
           },
           {
             text: '配置',
@@ -84,7 +95,10 @@ module.exports = {
           }
         ],
         sidebar: {
-          '/zh/guide/': genSidebarConfig('指南')
+          '/zh/guide/': genSidebarConfig('指南'),
+          '/zh/nested/': genNestedSidebarConfig('嵌套'),
+          '/zh/nested1/': genNestedSidebarConfig('嵌套'),
+          '/zh/nested2/': genNestedSidebarConfig('嵌套'),
         }
       }
     }
@@ -108,5 +122,90 @@ function genSidebarConfig (title) {
         'deploy'
       ]
     }
+  ]
+}
+
+function genNestedSidebarConfig(title) {
+  return [
+    '',
+    '/nested/foo/',
+    '/nested/bar/',
+    {
+      title: `isolated ${title}`,
+      collapsable: true,
+      isolated: true,
+      initialIsolatedOpen: true,
+      sidebarDepth: 0,
+      children: [
+        '/nested/nested-header',
+        {
+          title: 'foo',
+          collapsable: true,
+          sidebarDepth: 0,
+          children: [
+            '/nested/foo/foo-header',
+            '/nested/foo/foo-footer',
+          ]
+        },
+        {
+          title: 'bar',
+          collapsable: false,
+          sidebarDepth: 0,
+          children: [
+            '/nested/bar/bar-header',
+            '/nested/bar/bar-footer',
+          ]
+        },
+        '/nested/nested-footer',
+      ]
+    },
+    {
+      title: `${title}1`,
+      collapsable: true,
+      children: [
+        '/nested1/nested-header',
+        {
+          title: 'foo',
+          collapsable: true,
+          children: [
+            '/nested1/foo/foo-header',
+            '/nested1/foo/foo-footer',
+          ]
+        },
+        {
+          title: 'bar',
+          collapsable: true,
+          children: [
+            '/nested1/bar/bar-header',
+            '/nested1/bar/bar-footer',
+          ]
+        },
+        '/nested1/nested-footer',
+      ]
+    },
+    {
+      title: `${title}2`,
+      collapsable: true,
+      children: [
+        '/nested2/nested-header',
+        {
+          title: 'foo',
+          collapsable: true,
+          children: [
+            '/nested2/foo/foo-header',
+            '/nested2/foo/foo-footer',
+          ]
+        },
+        {
+          title: 'bar',
+          collapsable: true,
+          children: [
+            '/nested2/bar/bar-header',
+            '/nested2/bar/bar-footer',
+          ]
+        },
+        '/nested2/nested-footer',
+      ]
+    },
   ]
 }
