@@ -1,5 +1,6 @@
 module.exports = {
   dest: 'docs',
+  base: '/test-vuepress-nested-group/',
   locales: {
     '/': {
       lang: 'en-US',
