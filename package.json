@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "node ../vuepress/bin/vuepress dev docs-src",
-    "build": "node ../vuepress/bin/vuepress build docs-src",
+    "dev": "node ../vuepress/packages/vuepress/vuepress dev docs-src",
+    "build": "node ../vuepress/packages/vuepress/vuepress build docs-src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
